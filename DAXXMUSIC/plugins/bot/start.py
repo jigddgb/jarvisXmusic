@@ -28,18 +28,18 @@ from strings import get_string
 
 
 YUMI_PICS = [
-"https://telegra.ph/file/2e85d11aefdf6cd01301b.jpg",
-"https://telegra.ph/file/0a08b180583f13952336a.jpg",
-"https://telegra.ph/file/ace92d59d19127d2d4e89.jpg",
-"https://telegra.ph/file/bb0a28259990c6a978985.jpg",
-"https://telegra.ph/file/ace92d59d19127d2d4e89.jpg",
-"https://telegra.ph/file/a0db46dfacd94e489117b.jpg",
-"https://telegra.ph/file/cd77be2595cdc2fca60a3.jpg",
-"https://telegra.ph/file/632724b3d30c691247c77.jpg",
-"https://telegra.ph/file/a2d01afe4f2cb1d4b650c.jpg",
-"https://telegra.ph/file/94dc035df11dfb159b999.jpg",
-"https://telegra.ph/file/fed9a5b1cbaaefc3a818c.jpg",
-"https://telegra.ph/file/66fd03632cbb38bdb4193.jpg"
+"https://telegra.ph/file/03ba6095a3e3b0554a156.jpg",
+"https://telegra.ph/file/5f15712a84154fefd0e5b.jpg",
+"https://telegra.ph/file/f67b4717915d0224522ed.jpg",
+"https://telegra.ph/file/fdbffdb39d20374823466.jpg",
+"https://telegra.ph/file/782e4c83729ea24ab4d3d.jpg",
+"https://telegra.ph/file/f85e89871eb80c91f8a87.jpg",
+"https://telegra.ph/file/7d9389f7a76acfd00d76a.jpg",
+"https://telegra.ph/file/00c26f4ad58b6658f051b.jpg",
+"https://telegra.ph/file/79768149bf49df9511dcc.jpg",
+"https://telegra.ph/file/aad27c90297fb96030770.jpg",
+"https://telegra.ph/file/d1e6dd4ce208a651f0106.jpg",
+"https://telegra.ph/file/e7764382d4a2b06c1705c.jpg"
 
 ]
 
