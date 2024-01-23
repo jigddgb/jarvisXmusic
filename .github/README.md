@@ -23,7 +23,7 @@
 <details>
 <summary><b>sᴜᴘᴘᴏʀᴛ</b></summary>
 <br>
-[<img src="https://te.legra.ph/file/3f6810f790713b26fe826.jpg" width="60px">](https://tg://openmessage?user_id=5059737154) [<img src="https://te.legra.ph/file/2a7a17fc66a8f5fe785c3.jpg" width="60px">](https://t.me/jarvis2O) 
+
 
 [![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://telegram.me/BWANDARLOK)
 
