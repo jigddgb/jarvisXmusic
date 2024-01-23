@@ -2,7 +2,7 @@
 
 <h4 align="center"> MUSIC 𝐁𝐎𝐓𝐒</h4>
 
-<p align="center"><a href="https://t.me/jarvis2O"><video src="https://te.legra.ph/file/dc4fcf28af1a5f32ef695.mp4" width="400"></a></p>
+<p align="center"><a href="https://t.me/jarvis2O"><img src="https://te.legra.ph/file/dc4fcf28af1a5f32ef695.mp4" width="400"></a></p>
 
 
 > ⭐️ Thanks to everyone for using this BOTS. That is the greatest pleasure we have !
