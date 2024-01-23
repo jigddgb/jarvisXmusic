@@ -7,11 +7,11 @@ from config import LOGGER_ID as LOG_GROUP_ID
 from DAXXMUSIC import app  
 
 photo = [
-    "https://telegra.ph/file/1949480f01355b4e87d26.jpg",
-    "https://telegra.ph/file/3ef2cc0ad2bc548bafb30.jpg",
-    "https://telegra.ph/file/a7d663cd2de689b811729.jpg",
-    "https://telegra.ph/file/6f19dc23847f5b005e922.jpg",
-    "https://telegra.ph/file/2973150dd62fd27a3a6ba.jpg",
+    "https://telegra.ph/file/97104c6325930f8200774.jpg",
+    "https://telegra.ph/file/94d060152bf9994263017.jpg",
+    "https://telegra.ph/file/2e7b72279b28105607667.jpg",
+    "https://telegra.ph/file/87bae0c629ae73032ae77.jpg",
+    "https://telegra.ph/file/b21cb521c304e52a32187.jpg",
 ]
 
 
