@@ -1,6 +1,6 @@
 <h1 align="center"><b>[⚡] 𝙏𝙝𝙚𝐉𝐚𝐫𝐯𝐢𝐬𝘽𝙤𝙩𝙨 [⚡]</b></h1>
 
-<h4 align="center"> MUSIC 𝐁𝐎𝐓𝐒</h4>
+<h4 align="center"> 𝐌𝐔𝐒𝐈𝐂 𝐁𝐎𝐓𝐒</h4>
 
 <p align="center"><a href="https://t.me/jarvis2O"><img src="https://telegra.ph/file/83db3b7786ffa9948962b.jpg" width="400"></a></p>
 
