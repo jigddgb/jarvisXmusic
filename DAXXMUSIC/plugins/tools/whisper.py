@@ -1,132 +1,165 @@
-from DAXXMUSIC import app as app
-from config import BOT_USERNAME
-from pyrogram import filters
-from pyrogram.types import (
-    InlineQueryResultArticle, InputTextMessageContent,
-    InlineKeyboardMarkup, InlineKeyboardButton
-)
+import os
+from PIL import ImageDraw, Image, ImageFont, ImageChops
+from pyrogram import *
+from pyrogram.types import *
+from logging import getLogger
+from DAXXMUSIC import app
 
-whisper_db = {}
 
-switch_btn = InlineKeyboardMarkup([[InlineKeyboardButton("💒 Start Whisper", switch_inline_query_current_chat="")]])
 
-async def _whisper(_, inline_query):
-    data = inline_query.query
-    results = []
-    
-    if len(data.split()) < 2:
-        mm = [
-            InlineQueryResultArticle(
-                title="💒 Whisper",
-                description=f"@{BOT_USERNAME} [ USERNAME | ID ] [ TEXT ]",
-                input_message_content=InputTextMessageContent(f"💒 Usage:\n\n@{BOT_USERNAME} [ USERNAME | ID ] [ TEXT ]"),
-                thumb_url="https://te.legra.ph/file/3eec679156a393c6a1053.jpg",
-                reply_markup=switch_btn
-            )
-        ]
+
+
+LOGGER = getLogger(__name__)
+
+class WelDatabase:
+    def __init__(self):
+        self.data = {}
+
+    async def find_one(self, chat_id):
+        return chat_id in self.data
+
+    async def add_wlcm(self, chat_id):
+        self.data[chat_id] = {}  # You can store additional information related to the chat
+        # For example, self.data[chat_id]['some_key'] = 'some_value'
+
+    async def rm_wlcm(self, chat_id):
+        if chat_id in self.data:
+            del self.data[chat_id]
+
+wlcm = WelDatabase()
+
+class temp:
+    ME = None
+    CURRENT = 2
+    CANCEL = False
+    MELCOW = {}
+    U_NAME = None
+    B_NAME = None
+
+# ... (rest of your code remains unchanged)
+
+# ... (FUCK you randi ke bacvhhe )
+
+def circle(pfp, size=(500, 500)):
+    pfp = pfp.resize(size, Image.ANTIALIAS).convert("RGBA")
+    bigsize = (pfp.size[0] * 3, pfp.size[1] * 3)
+    mask = Image.new("L", bigsize, 0)
+    draw = ImageDraw.Draw(mask)
+    draw.ellipse((0, 0) + bigsize, fill=255)
+    mask = mask.resize(pfp.size, Image.ANTIALIAS)
+    mask = ImageChops.darker(mask, pfp.split()[-1])
+    pfp.putalpha(mask)
+    return pfp
+
+def welcomepic(pic, user, chatname, id, uname):
+    background = Image.open("DAXXMUSIC/assets/wel2.png")
+    pfp = Image.open(pic).convert("RGBA")
+    pfp = circle(pfp)
+    pfp = pfp.resize((825, 824))
+    draw = ImageDraw.Draw(background)
+    font = ImageFont.truetype('DAXXMUSIC/assets/font.ttf', size=110)
+    welcome_font = ImageFont.truetype('DAXXMUSIC/assets/font.ttf', size=60)
+    draw.text((2100, 1420), f'ID: {id}', fill=(12000, 12000, 12000), font=font)
+    pfp_position = (1990, 435)
+    background.paste(pfp, pfp_position, pfp)
+    background.save(f"downloads/welcome#{id}.png")
+    return f"downloads/welcome#{id}.png"
+
+# FUCK you bhosadiwale 
+
+
+@app.on_message(filters.command("wel") & ~filters.private)
+async def auto_state(_, message):
+    usage = "**Usage:**\n⦿/wel [on|off]\n➤ᴀᴜʀ ʜᴀᴀɴ ᴋᴀɴɢᴇʀs ᴋᴀʀᴏ ᴀʙ ᴄᴏᴘʏ ʙʜᴏsᴀᴅɪᴡᴀʟᴇ\n➤sᴀʟᴏɴ ᴀᴜʀ ʜᴀᴀɴ sᴛʏʟɪsʜ ғᴏɴᴛ ɴᴏᴛ ᴀʟʟᴏᴡᴇᴅ ɪɴ ᴛʜᴇ ᴛʜᴜᴍʙɴᴀɪʟ.!\ᴀᴜʀ ʜᴀᴀɴ ᴀɢʀ ᴋʜᴜᴅ ᴋɪ ᴋᴀʀɴɪ ʜᴀɪ ᴛᴏ ɢᴀᴀɴᴅ ᴍᴀʀᴀᴏ ʙᴇᴛɪᴄʜᴏᴅ"
+    if len(message.command) == 1:
+        return await message.reply_text(usage)
+    chat_id = message.chat.id
+    user = await app.get_chat_member(message.chat.id, message.from_user.id)
+    if user.status in (
+        enums.ChatMemberStatus.ADMINISTRATOR,
+        enums.ChatMemberStatus.OWNER,
+    ):
+        A = await wlcm.find_one(chat_id)
+        state = message.text.split(None, 1)[1].strip().lower()
+        if state == "on":
+            if A:
+                return await message.reply_text("Special Welcome Already Enabled")
+            elif not A:
+                await wlcm.add_wlcm(chat_id)
+                await message.reply_text(f"Enabled Special Welcome in {message.chat.title}")
+        elif state == "off":
+            if not A:
+                return await message.reply_text("Special Welcome Already Disabled")
+            elif A:
+                await wlcm.rm_wlcm(chat_id)
+                await message.reply_text(f"Disabled Special Welcome in {message.chat.title}")
+        else:
+            await message.reply_text(usage)
     else:
-        try:
-            user_id = data.split()[0]
-            msg = data.split(None, 1)[1]
-        except IndexError as e:
-            pass
-        
-        try:
-            user = await _.get_users(user_id)
-        except:
-            mm = [
-                InlineQueryResultArticle(
-                    title="💒 Whisper",
-                    description="Invalid username or ID!",
-                    input_message_content=InputTextMessageContent("Invalid username or ID!"),
-                    thumb_url="https://te.legra.ph/file/3eec679156a393c6a1053.jpg",
-                    reply_markup=switch_btn
-                )
-            ]
-        
-        try:
-            whisper_btn = InlineKeyboardMarkup([[InlineKeyboardButton("💒 Whisper", callback_data=f"fdaywhisper_{inline_query.from_user.id}_{user.id}")]])
-            one_time_whisper_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔩 One-Time Whisper", callback_data=f"fdaywhisper_{inline_query.from_user.id}_{user.id}_one")]])
-            mm = [
-                InlineQueryResultArticle(
-                    title="💒 Whisper",
-                    description=f"Send a Whisper to {user.first_name}!",
-                    input_message_content=InputTextMessageContent(f"💒 You are sending a whisper to {user.first_name}.\n\nType your message/sentence."),
-                    thumb_url="https://te.legra.ph/file/3eec679156a393c6a1053.jpg",
-                    reply_markup=whisper_btn
-                ),
-                InlineQueryResultArticle(
-                    title="🔩 One-Time Whisper",
-                    description=f"Send a one-time whisper to {user.first_name}!",
-                    input_message_content=InputTextMessageContent(f"🔩 You are sending a one-time whisper to {user.first_name}.\n\nType your message/sentence."),
-                    thumb_url="https://te.legra.ph/file/3eec679156a393c6a1053.jpg",
-                    reply_markup=one_time_whisper_btn
-                )
-            ]
-        except:
-            pass
-        
-        try:
-            whisper_db[f"{inline_query.from_user.id}_{user.id}"] = msg
-        except:
-            pass
-    
-    results.append(mm)
-    return results
+        await message.reply("Only Admins Can Use This Command")
 
+# ... (copy paster teri maa ki chut  )
 
-@app.on_callback_query(filters.regex(pattern=r"fdaywhisper_(.*)"))
-async def whispes_cb(_, query):
-    data = query.data.split("_")
-    from_user = int(data[1])
-    to_user = int(data[2])
-    user_id = query.from_user.id
-    
-    if user_id not in [from_user, to_user, 6691393517]:
-        try:
-            await _.send_message(from_user, f"{query.from_user.mention} is trying to open your whisper.")
-        except Unauthorized:
-            pass
-        
-        return await query.answer("This whisper is not for you 🚧", show_alert=True)
-    
-    search_msg = f"{from_user}_{to_user}"
-    
+@app.on_chat_member_updated(filters.group, group=-3)
+async def greet_group(_, member: ChatMemberUpdated):
+    chat_id = member.chat.id
+    A = await wlcm.find_one(chat_id)  # Corrected this line
+    if not A:
+        return
+    if (
+        not member.new_chat_member
+        or member.new_chat_member.status in {"banned", "left", "restricted"}
+        or member.old_chat_member
+    ):
+        return
+    user = member.new_chat_member.user if member.new_chat_member else member.from_user
     try:
-        msg = whisper_db[search_msg]
-    except:
-        msg = "🚫 Error!\n\nWhisper has been deleted from the database!"
-    
-    SWITCH = InlineKeyboardMarkup([[InlineKeyboardButton("Go Inline 🪝", switch_inline_query_current_chat="")]])
-    
-    await query.answer(msg, show_alert=True)
-    
-    if len(data) > 3 and data[3] == "one":
-        if user_id == to_user:
-            await query.edit_message_text("📬 Whisper has been read!\n\nPress the button below to send a whisper!", reply_markup=SWITCH)
-
-
-async def in_help():
-    answers = [
-        InlineQueryResultArticle(
-            title="💒 Whisper",
-            description=f"@YumikooBot [USERNAME | ID] [TEXT]",
-            input_message_content=InputTextMessageContent(f"**📍Usage:**\n\n@YumikooBot (Target Username or ID) (Your Message).\n\n**Example:**\n@YumikooBot @username I Wanna Phuck You"),
-            thumb_url="https://te.legra.ph/file/3eec679156a393c6a1053.jpg",
-            reply_markup=switch_btn
+        pic = await app.download_media(
+            user.photo.big_file_id, file_name=f"pp{user.id}.png"
         )
-    ]
-    return answers
+    except AttributeError:
+        pic = "DAXXMUSIC/assets/upic.png"
+    if (temp.MELCOW).get(f"welcome-{member.chat.id}") is not None:
+        try:
+            await temp.MELCOW[f"welcome-{member.chat.id}"].delete()
+        except Exception as e:
+            LOGGER.error(e)
+    try:
+        welcomeimg = welcomepic(
+            pic, user.first_name, member.chat.title, user.id, user.username
+        )
+        temp.MELCOW[f"welcome-{member.chat.id}"] = await app.send_photo(
+            member.chat.id,
+            photo=welcomeimg,
+            caption=f"""
+**Wᴇʟᴄᴏᴍᴇ Tᴏ {member.chat.title}
+➖➖➖➖➖➖➖➖➖➖➖➖
+Nᴀᴍᴇ ✧ {user.mention}
+Iᴅ ✧ {user.id}
+Usᴇʀɴᴀᴍᴇ ✧ @{user.username}
+➖➖➖➖➖➖➖➖➖➖➖➖**
+""",
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(f"⦿ ᴀᴅᴅ ᴍᴇ ⦿", url=f"https://t.me/YumikooBot?startgroup=true")]])
+        )
+    except Exception as e:
+        LOGGER.error(e)
+    try:
+        os.remove(f"downloads/welcome#{user.id}.png")
+        os.remove(f"downloads/pp{user.id}.png")
+    except Exception as e:
+        pass
 
+# ... (resfuxbk 
 
-@app.on_inline_query()
-async def bot_inline(_, inline_query):
-    string = inline_query.query.lower()
-    
-    if string.strip() == "":
-        answers = await in_help()
-        await inline_query.answer(answers)
-    else:
-        answers = await _whisper(_, inline_query)
-        await inline_query.answer(answers[-1], cache_time=0)
-                                               
+@app.on_message(filters.new_chat_members & filters.group, group=-1)
+async def bot_wel(_, message):
+    for u in message.new_chat_members:
+        if u.id == app.me.id:
+            await app.send_message(LOG_CHANNEL_ID, f"""
+**NEW GROUP
+➖➖➖➖➖➖➖➖➖➖➖➖
+NAME: {message.chat.title}
+ID: {message.chat.id}
+USERNAME: @{message.chat.username}
+➖➖➖➖➖➖➖➖➖➖➖➖**
+""")
