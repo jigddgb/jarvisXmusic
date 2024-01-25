@@ -26,9 +26,7 @@
 
 <details>
 <summary><b>sᴜᴘᴘᴏʀᴛ</b></summary>
-<br>
-[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://telegram.me/BWANDARLOK)
-
+<br>[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://telegram.me/BWANDARLOK)
 </details>
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
