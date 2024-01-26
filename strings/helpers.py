@@ -166,7 +166,7 @@ HELP_17 = """
 HELP_18 = """
 <b><u>Tᴀɢ-Aʟʟ :</b></u>
 
- /tagall or /utag   ➠  ғᴏʀ ʀᴀɴᴅᴏᴍʟʏ ғᴜɴɴʏ ᴛᴀɢs 😁.
+ /tagall or /tagmember   ➠  ғᴏʀ ʀᴀɴᴅᴏᴍʟʏ ғᴜɴɴʏ ᴛᴀɢs 😁.
  /tagoff or /tagstop   ➠  sᴛᴏᴘ ᴍᴇɴᴛɪᴏɴɪɴɢ ғᴜɴɴʏ ᴛᴀɢs.
  /tagmember ➠ ᴛᴀɢ ᴍᴇᴍʙᴇʀs ᴡɪᴛʜ ᴇᴍᴏᴊɪ🫠.
  /cancel ➠ sᴛᴏᴘ ᴇᴍᴏᴊɪ ᴛᴀɢ.
