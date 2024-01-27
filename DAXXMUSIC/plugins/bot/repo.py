@@ -68,7 +68,7 @@ InlineKeyboardButton("𝗔𝗟 𝗦𝗣𝗔𝗠 𝗕𝗢𝗧", url=f"https://git
     reply_markup = InlineKeyboardMarkup(buttons)
     
     await msg.reply_photo(
-        photo="https://telegra.ph/file/83db3b7786ffa9948962b.jpg",
+        photo="https://telegra.ph/file/58afe55fee5ae99d6901b.jpg",
         caption=start_txt,
         reply_markup=reply_markup
     )
