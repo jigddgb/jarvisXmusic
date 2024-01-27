@@ -13,7 +13,7 @@ BLACKLISTED = []
 UA = "MR DAXX"
 
 
-@app.on_message(filters.command("chk", prefixes=PREFIX))
+@app.on_message(filters.command("chk", prefixes="/","!"))
 async def check_cc(client, message):
     await message.reply_chat_action('typing')
     tic = time.perf_counter()
