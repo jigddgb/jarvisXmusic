@@ -12,7 +12,7 @@ openai.api_key = "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"
 
 
 
-@app.on_message(filters.command(["chatgpt","ai","ask"],  prefixes=["+", ".", "/", "-", "?", "$","#","&"]))
+@app.on_message(filters.command(["chatgpt","ai","ask"],  prefixes=["+", ".", "/", "!"]))
 async def chat(app :app, message):
     
     try:
@@ -36,7 +36,7 @@ async def chat(app :app, message):
 
 
 
-@app.on_message(filters.command(["assis"],  prefixes=["+", ".", "/", "-", "?", "$","#","&"]))
+@app.on_message(filters.command(["assis"],  prefixes=["+", ".", "/", "!"]))
 async def chat(app :app, message):
     
     try:
