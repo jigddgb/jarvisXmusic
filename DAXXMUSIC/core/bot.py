@@ -8,7 +8,7 @@ from ..logging import LOGGER
 
 class DAXX(Client):
     def __init__(self):
-        LOGGER(__name__).info(f"Starting Bot...")
+        LOGGER(__name__).info(f"Annie is on the way...")
         super().__init__(
             name="𝐀𝐍𝐍𝐈𝐄 𝐗 𝐌𝐔𝐒𝐈𝐂",
             api_id=config.API_ID,
