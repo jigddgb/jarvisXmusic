@@ -46,11 +46,11 @@ InlineKeyboardButton("𝗖𝗛𝗔𝗧 𝗕𝗢𝗧", url=f"https://github.com/P
 ],
 [
 InlineKeyboardButton("𝗦𝗧𝗥𝗜𝗡𝗚𝗕𝗢𝗧", url=f"https://github.com/doraemon890/jarvisXsession-for-both-pyro"),
-InlineKeyboardButton("𝗖𝗛𝗔𝗧𝗚𝗣𝗧", url=f"https://github.com/DAXXTEAM/DAXXCHATGPT"),
+InlineKeyboardButton("𝐁𝐖𝐀𝐍𝐃𝐀𝐑𝐋𝐎𝐊", url=f"https://t.me/BWANDARLOK"),
 ],
 [
-              InlineKeyboardButton("𝗩𝗣𝗦", url=f"https://github.com/DAXXTEAM/Kaali-Linux"),
-              InlineKeyboardButton("𝗠𝗢𝗩𝗜𝗘︎", url=f"https://github.com/DAXXTEAM/DAXXMOVIEBOT"),
+              InlineKeyboardButton("𝐆𝐈𝐓𝐇𝐔𝐁 𝐏𝐑𝐎𝐅𝐈𝐋𝐄", url=f"https://github.com/doraemon890"),
+              InlineKeyboardButton("𝐃𝐎𝐑𝐀𝐄𝐌𝐎𝐍♡︎", url=f"https://t.me/Doraemon890"),
               ],
               [
               InlineKeyboardButton("𝗦𝗧𝗥𝗜𝗡𝗚 𝗕𝗢𝗧 𝗩2", url=f"https://github.com/doraemon890/JarvisStringSessionBot"),
@@ -58,7 +58,7 @@ InlineKeyboardButton("𝗕𝗥𝗢𝗔𝗗𝗖𝗔𝗦𝗧", url=f"https://githu
 ],
 [
 InlineKeyboardButton("𝗨𝗦𝗘𝗥𝗕𝗢𝗧", url=f"https://github.com/PRADHAN474/OXYUSERBOT"),
-InlineKeyboardButton("𝗦𝗘𝗔𝗥𝗖𝗛𝗕𝗢𝗧", url=f"https://github.com/DAXXTEAM/SEARCH_BOT"),
+InlineKeyboardButton("𝐂𝐎𝐃𝐄𝐗", url=f"https://t.me/TEAM_CDX"),
 ],
 [
 InlineKeyboardButton("𝗔𝗟 𝗦𝗣𝗔𝗠 𝗕𝗢𝗧", url=f"https://github.com/doraemon890/Jarvis-X-spam"),
