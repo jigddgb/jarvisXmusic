@@ -50,12 +50,12 @@ async def init():
         pass
     await DAXX.decorators()
     LOGGER("DAXXMUSIC").info(
-        "╔═════ஜ۩۞۩ஜ════╗\n  ☠︎︎𝗠𝗔𝗗𝗘 𝗕𝗬 𝗝𝗔𝗥𝗩𝗜𝗦☠︎︎\n╚═════ஜ۩۞۩ஜ════╝"
+        "╔═════ஜ۩۞۩ஜ════╗\n  ☠︎︎Mᴀᴅᴇ ʙʏ Fᴀʟᴄᴏɴ☠︎︎\n╚═════ஜ۩۞۩ஜ════╝"
     )
     await idle()
     await app.stop()
     await userbot.stop()
-    LOGGER("DAXXMUSIC").info("𝗦𝗧𝗢𝗣 𝗝𝗔𝗥𝗩𝗜𝗦 𝗠𝗨𝗦𝗜𝗖🎻 𝗕𝗢𝗧..")
+    LOGGER("DAXXMUSIC").info("Sᴛᴏᴘ Fᴀʟᴄᴏɴ Mᴜsɪᴄ BOᴛ..")
 
 
 if __name__ == "__main__":
